@@ -1,6 +1,8 @@
 package org.example.w5_address_book;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 
@@ -9,6 +11,10 @@ public class HelloController {
     private Label welcomeText;
     @FXML
     private TextArea termsAndConditions;
+    @FXML
+    private CheckBox agreeCheckBox;
+    @FXML
+    private Button nextButton;
 
     @FXML
     public void initialize() {
@@ -33,5 +39,10 @@ Elementum nibh tellus molestie nunc non blandit massa.""");
     @FXML
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to the Address Book Application!");
+    }
+    @FXML
+    protected void onAgreeCheckBoxClick() {
+        boolean accepted = agreeCheckBox.isSelected();
+        nextButton.setDisable(!accepted);
     }
 }
