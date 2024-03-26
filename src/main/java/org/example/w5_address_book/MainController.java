@@ -84,4 +84,18 @@ public class MainController {
         contactsListView.setCellFactory(this::renderCell);
         syncContacts();
     }
+
+    @FXML
+    private void onEditConfirm() {
+        // Get the selected contact from the list view
+        Contact selectedContact = contactsListView.getSelectionModel().getSelectedItem();
+        if (selectedContact != null) {
+            selectedContact.setFirstName(firstNameTextField.getText());
+            selectedContact.setLastName(lastNameTextField.getText());
+            selectedContact.setEmail(emailTextField.getText());
+            selectedContact.setPhone(phoneTextField.getText());
+            contactDAO.updateContact(selectedContact);
+            syncContacts();
+        }
+    }
 }
