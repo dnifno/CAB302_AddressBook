@@ -20,6 +20,11 @@ public class HelloController {
     private CheckBox agreeCheckBox;
     @FXML
     private Button nextButton;
+    @FXML
+    protected void onCancelButtonClick() {
+        Stage stage = (Stage) nextButton.getScene().getWindow();
+        stage.close();
+    }
 
     @FXML
     public void initialize() {
