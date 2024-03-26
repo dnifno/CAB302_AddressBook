@@ -3,11 +3,20 @@ package org.example.w5_address_book;
 import javafx.fxml.FXML;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
 public class MainController {
     @FXML
     private ListView<Contact> contactsListView;
     private IContactDAO contactDAO;
+    @FXML
+    private TextField firstNameTextField;
+    @FXML
+    private TextField lastNameTextField;
+    @FXML
+    private TextField emailTextField;
+    @FXML
+    private TextField phoneTextField;
     public MainController() {
         contactDAO = new MockContactDAO();
     }
